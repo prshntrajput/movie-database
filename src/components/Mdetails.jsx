@@ -41,18 +41,18 @@ const Mdetails = () => {
                 <h1 className='text-white mt-2 text-sm'>Available on Platform</h1>
            <div className='mt-3 flex gap-9'>
 
-            {info.watchproviders && info.watchproviders.buy && info.watchproviders.buy.map((w)=>(
+            {info.watchproviders && info.watchproviders.buy && info.watchproviders.buy.map((w,i)=>(
               
-              <img className='w-[7vh] rounded-md' src={`https://image.tmdb.org/t/p/original/${w.logo_path || w.logo_path}`} alt=""/>
+              <img key={i} className='w-[7vh] rounded-md' src={`https://image.tmdb.org/t/p/original/${w.logo_path || w.logo_path}`} alt=""/>
             ))}
 
             </div>
 
             <div>
                   
-            {info.watchproviders && info.watchproviders.flatrate && info.watchproviders.flatrate.map((w)=>(
+            {info.watchproviders && info.watchproviders.flatrate && info.watchproviders.flatrate.map((w,i)=>(
               
-              <img className='w-[7vh] rounded-md' src={`https://image.tmdb.org/t/p/original/${w.logo_path || w.logo_path}`} alt=""/>
+              <img key={i} className='w-[7vh] rounded-md' src={`https://image.tmdb.org/t/p/original/${w.logo_path || w.logo_path}`} alt=""/>
             ))}
 
             </div>
@@ -61,9 +61,9 @@ const Mdetails = () => {
              <h1 className='text-white mt-2 text-sm'>Available on Rent</h1>
             <div className='flex mt-3 gap-3'>
               
-            {info.watchproviders && info.watchproviders.rent && info.watchproviders.rent.map((w)=>(
+            {info.watchproviders && info.watchproviders.rent && info.watchproviders.rent.map((w,i)=>(
               
-              <img className='w-[7vh] rounded-md' src={`https://image.tmdb.org/t/p/original/${w.logo_path || w.logo_path}`} alt=""/>
+              <img key={i} className='w-[7vh] rounded-md' src={`https://image.tmdb.org/t/p/original/${w.logo_path || w.logo_path}`} alt=""/>
             ))}
            </div>
            </div>
@@ -74,15 +74,15 @@ const Mdetails = () => {
           <div className="text-white mx-[10%] text-5xl mt-2 font-semibold">{info.detail.original_title}
                <p className="text-xl mt-4 text-white font-light">{info.detail.overview}</p>
                <div className='flex mt-6'>
-                <i class="ri-game-fill text-2xl text-yellow-600"></i>
-                {info.detail.genres.map((g)=>(<h1 className='text-blue-500 text-base mx-2'>{g.name}</h1>))}
+                <i className="ri-game-fill text-2xl text-yellow-600"></i>
+                {info.detail.genres.map((g,i)=>(<h1 key={i} className='text-blue-500 text-base mx-2'>{g.name}</h1>))}
                 <div className='flex mx-14'>
                 <i class="ri-speak-fill text-yellow-600 text-2xl"></i>
-                {info.detail.spoken_languages.map((g)=>(<h1 className='text-blue-500 text-base mx-2'>{g.name}</h1>))}
+                {info.detail.spoken_languages.map((g,i)=>(<h1 key={i} className='text-blue-500 text-base mx-2'>{g.name}</h1>))}
                 </div>
                 </div>    
               <div className='flex mt-4'>
-                  <i class="ri-megaphone-fill text-2xl text-yellow-600"></i> 
+                  <i className="ri-megaphone-fill text-2xl text-yellow-600"></i> 
                   <h1 className='text-base text-blue-500 mx-2'>{info.detail.release_date || "No info"}</h1>             
               </div>     
           </div>
