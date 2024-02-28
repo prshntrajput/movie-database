@@ -31,7 +31,7 @@ select{
   font-size: 0.9em;
   font-family: "Open Sans",sans-serif;
 
-};
+}
 
 select::ms-expand{
   display:none;
